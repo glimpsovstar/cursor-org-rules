@@ -1,0 +1,28 @@
+---
+description: Org engineering standards — clarity, verification, focused diffs
+alwaysApply: true
+---
+
+# Engineering standards (org)
+
+## Ask when unclear
+
+Before non-trivial work: ask **1–2 focused questions** (use AskQuestion when options are concrete). Do not guess on scope, persistence, or auth. Proceed without blocking for obvious fixes or explicit instructions.
+
+## Verify before done
+
+Before claiming work is complete, fixed, or ready to commit/PR:
+
+- Run the project's verification commands (tests, build, lint).
+- Confirm output — evidence before assertions.
+
+## Code changes
+
+- Minimal scope — smallest correct diff.
+- Match existing conventions in the repo.
+- Useful tests only — no trivial or CSS-class-only assertions.
+- Comments only for non-obvious logic.
+
+## Secrets
+
+Never commit secrets, tokens, or credential material.

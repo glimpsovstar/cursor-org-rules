@@ -1,0 +1,21 @@
+---
+description: Org commit and pull request policy
+alwaysApply: true
+---
+
+# Commit and PR policy (org)
+
+## Commits
+
+- **Only commit when the user asks**, or when the task explicitly includes committing (e.g. SDLC slice, "commit this").
+- When committing: imperative message, 1–2 sentences on *why*; one concern per commit when practical (code / tests / docs separate).
+- Never force-push `main`; never skip hooks unless user requests.
+
+## Pull requests
+
+- One feature or theme per PR when possible.
+- **Summary** (2–4 bullets) + **Test plan** checklist.
+- Call out breaking changes, migrations, and manual verification steps.
+- Avoid unrelated refactors in the same PR.
+
+Use `gh` for GitHub operations when creating PRs.

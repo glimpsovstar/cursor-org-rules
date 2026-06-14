@@ -1,0 +1,19 @@
+---
+description: Org SDLC — GitHub issue, branch, PR for features and bugs
+alwaysApply: true
+---
+
+# GitHub SDLC (org)
+
+For **new features**, **bugs**, or **production/deploy errors** (not docs-only or trivial copy):
+
+1. **Open a GitHub issue** — problem, acceptance criteria, test plan.
+2. **Branch** from `main`: `feature/<issue#>-short-slug` or `fix/<issue#>-short-slug`.
+3. **Implement** — small commits; tests + docs per project rules.
+4. **Verify** — run the project's test/build commands (see project `require-tests.mdc`).
+5. **Pull request** — link issue (`Fixes #N`); Summary + Test plan checklist.
+6. **Close issue** when merged (or user confirms merge).
+
+File the issue when the problem is found — including operator/config issues. Do not rely on PR comments alone.
+
+Skip only when the user explicitly says to skip SDLC for that task.

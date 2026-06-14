@@ -1,0 +1,29 @@
+---
+description: Org default — Superpowers spec/plan/build workflow for features and platform work
+alwaysApply: true
+---
+
+# Superpowers workflow (org)
+
+Use the **Superpowers** plugin skills for planning and building — not ad-hoc discovery.
+
+| Situation | Skill (read before acting) |
+|-----------|----------------------------|
+| New feature, platform work, behavior change | `brainstorming` |
+| Spec approved → implementation plan | `writing-plans` |
+| Execute a written plan | `executing-plans` or `subagent-driven-development` |
+| Bug or test failure | `systematic-debugging` |
+| Feature or bugfix code | `test-driven-development` |
+| Isolated feature work | `using-git-worktrees` |
+| Before claiming done / commit / PR | `verification-before-completion` |
+| Major step complete | `requesting-code-review` |
+
+## Creative work gate
+
+1. **No implementation** until design is presented and approved (unless user says skip SDLC).
+2. Approved design → `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md`
+3. Plans → `docs/superpowers/plans/YYYY-MM-DD-<feature>.md`
+
+**Overrides:** obvious fixes; docs-only; user says "skip SDLC" / "no spec".
+
+Project rules govern stack-specific test commands and doc paths.
