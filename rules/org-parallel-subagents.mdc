@@ -1,0 +1,42 @@
+---
+description: Org default — use parallel subagents (Task tool) for independent workstreams
+alwaysApply: true
+---
+
+# Parallel subagents (org)
+
+Use **multiple subagents in parallel** whenever work splits into **independent domains** with no shared mutable state. Read Superpowers `dispatching-parallel-agents` before dispatching.
+
+## Prefer parallel subagents when
+
+- **2+ independent tasks** — e.g. backend API + frontend UI, migrations + scanner, docs + code in separate areas
+- **Broad exploration** — repo layout + Vault integration patterns + existing tests (launch `explore` agents concurrently)
+- **Multiple unrelated failures** — separate test files, subsystems, or bugs with different root causes
+- **Review + implementation** — e.g. `code-reviewer` while continuing the next slice (only if no merge conflict on same files)
+
+## Dispatch pattern
+
+1. Split work by **problem domain**, not by file count alone.
+2. Launch subagents **in one turn** (multiple Task calls) when tasks are parallel-safe.
+3. Give each agent a **self-contained prompt**: goal, paths, constraints, expected return format — do not assume shared chat history.
+4. **Integrate** results yourself: resolve conflicts, dedupe findings, one coherent PR.
+
+## Subagent types (Cursor Task tool)
+
+| Type | Use for |
+|------|---------|
+| `explore` | Codebase/API discovery, read-only research |
+| `shell` | Git, CI, docker, scripted verification |
+| `generalPurpose` | Focused implementation or investigation in one area |
+| `code-reviewer` | Post-slice review against spec/plan |
+
+## Do not parallelize when
+
+- Tasks **share state** — same files, same migration, same failing integration test chain
+- Later steps **depend** on earlier decisions (schema → API → UI must stay sequential unless interfaces are fixed)
+- Scope is **trivial** — one file, obvious fix; spawning agents adds overhead
+- Subagents would **race** on git writes or the same resource
+
+## Demo / SDLC repos
+
+For demo repositories, parallel agents are encouraged for **research and exploration**; keep **commits and PRs** coordinated by the parent agent (one branch, one PR narrative unless explicitly splitting work).

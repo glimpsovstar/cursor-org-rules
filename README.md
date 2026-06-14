@@ -43,6 +43,8 @@ This symlinks `rules/org-*.mdc` into `~/.cursor/rules/` without removing your ex
 
 Re-sync when `team-rules/` changes (treat like code — tag releases or announce in Slack).
 
+**Team rules files:** `01-superpowers-workflow.md` … `05-parallel-subagents.md`
+
 ## Per-project setup
 
 Each app repo should contain **only**:
